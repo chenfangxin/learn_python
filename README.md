@@ -1,7 +1,6 @@
-# learn_python
+# 瀛︿範Python 
 
-+ [基础知识](basic.md)
-+ [函数](function.md)
-+ [容器](container.md)
-+ [类](class.md)
-
++ [鍩虹鐭ヨ瘑](basic.md)
++ [鍑芥暟](function.md)
++ [瀹瑰櫒](container.md)
++ [绫籡(class.md)
