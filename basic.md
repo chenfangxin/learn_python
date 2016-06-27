@@ -8,7 +8,8 @@
 
 Python是动态语言，变量仅仅是一个代号，其类型不是固定的。给变量赋值就是一个**名**和**值**的绑定过程。
 Python是纯面向对象语言，Python中所有的值都是**对象**。
-Python中的值类型如下：
+
+Python中的值有如下类型：
 
 |类型            | 示例           |说明 		   |
 |----------------|----------------|----------------|
@@ -93,7 +94,7 @@ else :
 ```
 `for`示例如下：
 ```
-for var in sequence :
+for var in iterable :
 	statements1
 else :
 	statements2
