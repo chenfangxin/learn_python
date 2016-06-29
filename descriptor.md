@@ -47,8 +47,33 @@ del user.name
 ```
 
 --------------------------------------------------------------------------------
-## Property类
-Property类将对属性的访问(读，写，删除)操作对应到函数，然后在函数中执行检查。示例如下：
+## property类
+
+内置的`property类`是实现数据描述符的简单方式，`property类`将对属性的访问(读，写，删除)操作对应到函数，然后在函数中执行检查。示例如下：
+```
+cass person(object):
+	def __init__(self, name):
+		self.__name = name	
+	
+	def getName(self):
+		print "fetch name"
+		return self.__name
+	
+	def setName(self, name):
+		print "change name"
+		self.__name = name
+	
+	def delName(self):
+		print "remove name"
+		del self.__name
+	
+	name = property(getName, setName, delName, "name property docs")
+
+bob = person('bob')
+bob.name = 'john'
+
+print bob.name
 ```
 
-```
+
+
