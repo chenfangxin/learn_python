@@ -92,6 +92,9 @@ for i in f:
 
 ```
 
+>  生成器函数(Generator Function)与普通函数的区别是，生成器函数不用`return`返回
+
+
 生成器表达式是一类特殊的生成器函数，其语法与列表解析很像：
 ```
 ( expr for var in iterable)
