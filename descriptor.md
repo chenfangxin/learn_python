@@ -17,6 +17,8 @@
 
 那么这个类`new style`类，被成为一个**描述符**。如果同时实现了`__get__`和`__set__`函数，则称之为**数据描述符**。
 
+> 所谓`new style`类，就是基础自`object`的类
+
 上述三个函数的作用如下：
 + `__get__(self, instance, owner)`：返回属性的值，当属性不存在时，拋出`AttributeError`异常
 + `__set__(self, instance, value)`：设置属性的值，不返回任何值
@@ -26,7 +28,7 @@
 ```
 class descriptor(object):
 	def __init__(self):
-		self.name = ''
+		self.__name = ''
 
 	def __get__(self, instance, owner):
 		print "In __get__"
