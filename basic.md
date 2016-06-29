@@ -18,7 +18,7 @@ Python中的值有如下类型：
 |字节串(Bytes)   | b'abc', b'def\xff' |由0到255之间的值组成的不可变序列 |
 |布尔类型(Bool)  | True, False 		  |只有两个值 |
 |函数(Function)  | def FUNC(ARGS):    |函数是第一类**值** 		  |
-|元祖(Tuple)	 | (1,2,'a')		  |不可变序列 |
+|元组(Tuple)	 | (1,2,'a')		  |不可变序列 |
 |列表(List)	 	 | [1,2,'a']		  |可变序列   |
 |字典(Dictionary) | {'a':1, 'd':2.4 } |以`Key:Value`的形式存储的HASH表 |
 |集合(Set) 		  | {1,2,3,4,'a','b'} |           |
