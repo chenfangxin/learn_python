@@ -7,3 +7,4 @@
 + [迭代器与生成器](iterator_generator.md)
 + [装饰器](decorator.md)
 + [描述符](descriptor.md)
++ [元类](metaclass.m)
