@@ -99,5 +99,5 @@ print bob.name
 
 
 `__getattribute__(self, name)`和`__getattr__(self, name)`的区别：
-如果定义了`__getattribute__`函数，则通过实例访问属性时，一定会调用此函数; 而`__getattr__`函数只在查找属性的最后阶段调用。
+如果定义了`__getattribute__`函数，则通过实例访问属性时，一定会调用此函数，上述属性查找顺序的`1-4`步，就是在此函数(`object.__getattribute__`)中实现的; 而`__getattr__`函数只在查找属性的最后阶段调用。
 
