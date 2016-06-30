@@ -26,23 +26,25 @@
 + `__set__(self, instance, value)`：设置属性的值，不返回任何值
 + `__delete__(self, instance)`：控制属性删除操作，不返回任何值
 
+上述函数中，通过对象实例访问属性时，`instance`表示该对象；通过类访问属性时，`instance`为None。
+
 描述符协议的简单示例如下：
 ```
 class descriptor(object):
 	def __init__(self):
-		self.__name = ''
+		pass
 
 	def __get__(self, instance, owner):
 		print "In __get__"
-		return self.__name
+		return instance.__name
 	
 	def __set__(self, instance, value):
 		print "In __set__"
-		self.__name = value
+		instance.__name = value
 	
 	def __delete__(self, instance):
 		print "In __delete__"
-		del self.__name
+		del instance.__name
 	
 class person(object):
 	name = descriptor()
@@ -52,7 +54,6 @@ user.name = 'john'
 user.name
 del user.name
 ```
-
 
 
 --------------------------------------------------------------------------------
@@ -95,4 +96,8 @@ print bob.name
 4. 在`obj.__class__.__dict__`中查找，如果找到**描述符**，则返回`__get__`方法的结果；如果找到一个普通属性，则直接返回；如果没找到，则进入下一步。
 5. 执行`__getattr__()`
 6. 抛出`AttributeError`
+
+
+`__getattribute__(self, name)`和`__getattr__(self, name)`的区别：
+如果定义了`__getattribute__`函数，则通过实例访问属性时，一定会调用此函数; 而`__getattr__`函数只在查找属性的最后阶段调用。
 
