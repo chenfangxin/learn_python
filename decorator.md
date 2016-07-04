@@ -108,11 +108,12 @@ method = dec_a(params_a)(dec_b(params_b)(method))
 ```
 def dec(cls):
 	class wrapper:
-		def __init__(self, `*args`):
-			self.wrapped = cls(`*args`)
+		def __init__(self, *args):
+			self.wrapped = cls(*args)
 
 		def __getattr__(self, name):
 			return getattr(self.wrapped, name)
+	return wrapper
 
 @dec
 class foo:
@@ -122,3 +123,6 @@ class foo:
 a = foo(6,7)
 
 ```
+由此可见，实现**类装饰器**的条件是：能在函数中定义类，并返回该类。
+
+
