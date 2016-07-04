@@ -7,7 +7,9 @@
 ## 函数装饰器
 函数装饰器是包装其他函数的**函数**，也就是以被包装的函数为参数，返回包装过的函数。
 
-用闭包实现函数装饰器，示例如下：
++ 用闭包实现函数装饰器
+
+示例如下：
 ```
 def dec(func):
 	def wrapper(args):
@@ -23,7 +25,10 @@ foo = dec(foo)   # foo 被装饰了, 添加了新功能
 foo(1)
 ```
 
-用类实现函数装饰器，也就是重载`__call__`函数：
++ 用类实现函数装饰器
+
+类如果定义了`__call__`函数，就能当成一个函数使用了，用类实现函数装饰器，也就是重载`__call__`函数：
+
 ```
 class dec:
 	def __init__(self, func):
@@ -107,13 +112,13 @@ method = dec_a(params_a)(dec_b(params_b)(method))
 示例如下：
 ```
 def dec(cls):
-	class wrapper:
+	class wrapper:	# 在函数中定义类
 		def __init__(self, *args):
 			self.wrapped = cls(*args)
 
 		def __getattr__(self, name):
 			return getattr(self.wrapped, name)
-	return wrapper
+	return wrapper	# 返回类
 
 @dec
 class foo:
