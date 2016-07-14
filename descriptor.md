@@ -96,6 +96,8 @@ print bob.name
 5. 执行`__getattr__()`
 6. 抛出`AttributeError`
 
+**注意：**在继承树中各类中查找时，顺序还是按照[MRO算法](mro.md)执行。
+
 
 `__getattribute__(self, name)`和`__getattr__(self, name)`的区别：
 
