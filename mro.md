@@ -1,6 +1,6 @@
 # MRO问题
 
-MRO(Method Resolution Order)，即方法解析顺序，用于解决多重继承中，父类同名函数的问题。MRO实际上是要在继承树中，确定一个搜索的线性序列。
+MRO(Method Resolution Order)，即方法解析顺序，用于解决多重继承中，多个父类中同名函数(method)或属性(attribute)的问题。MRO实际上是要在继承树中，确定一个搜索的线性序列。
 
 在Python中，对于经典类(Classic Class)，使用**深度优先(DFS)**原则来查找方法。**深度优先(DFS)**算法无法解决两个问题：
 
