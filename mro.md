@@ -15,4 +15,6 @@ MRO(Method Resolution Order)，即方法解析顺序，用于解决多重继承�
 
 对于Python2.7中的新式类(New-style Class)以及Python3中，使用`C3算法`。
 
+## C3算法
+
 
