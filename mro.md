@@ -22,9 +22,9 @@ L(Child(Base1, Base2)) = [Child + merge(L(Base1), L(Base2), Base1, Base2)]
 
 L至少有一个元素（即类本身），`merge`的 规则如下：
 
-1. 如果列表为空，则结束；若非空，取`表头`
-2. 查看`表头`，是否存在于`表尾`中。若不在，进入步骤3；若存在，进入步骤4
-3. 将表头放入L中，并从`merge`中的所有列表中删除，然后回到步骤1
+1. 如果`merge`列表为空，则结束；若非空，取`表头`
+2. 查看`表头`，是否存在于所有`merge`列表的`表尾`中。若不在，进入步骤3；若存在，进入步骤4
+3. 将`表头`放入`L`中，并从`merge`中的所有列表中删除，然后回到步骤1
 4. 查看当前列表是否为merge的最后一个列表，若不是，进入步骤5；若是，进入步骤6
 5. 跳过当前列表，读取`merge`中的下一个列表，然后回到步骤2
 6. 丢出异常，类定义失败
@@ -32,3 +32,35 @@ L至少有一个元素（即类本身），`merge`的 规则如下：
 `表头：` 列表中的第一个元素
 `表尾：`列表中，除表头外的其他元素
 
+如下示例：
+```
+class D: pass
+class E: pass
+class F: pass
+class B(D,E): pass
+class C(D,F): pass
+class A(B,C): pass
+```
+
+这种继承关系，`C3`的演算过程如下:
+```
+L(B(D,E)) = B + merge(L(D), L(E), DE)
+		  = B + merge(D, E, DE)
+		  = B + D + merge(E, E)
+		  = B + D + E
+		  = BDE
+
+L(C(D,F)) = C + merge(L(D), L(F), DF)
+		  = C + merge(D, F, DF)
+		  = C + D + merge(F, F)
+		  = C + D + F
+		  = CDF
+
+L(A(B,C) = A + merge(L(B), L(C), BC)
+		 = A + merge(BDE, CDF, BC)
+		 = A + B + merge(DE, CDF, C)
+		 = A + B + C + merge(DE, DF)
+		 = A + B + C + D + merge(E, F)
+		 = A + B + C + D + E + F
+		 = ABCDEF
+```
