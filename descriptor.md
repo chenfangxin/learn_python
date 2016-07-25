@@ -19,7 +19,7 @@
 
 那么这个类`new style`类，被成为一个**描述符**。如果同时实现了`__get__`和`__set__`函数，则称之为**数据描述符**。
 
-> 所谓`new style`类，就是基础自`object`的类
+> 所谓`new style`类，就是基础自`object`的类，只有`new style`类可以使用`描述符协议`，`__getattribute__`等特性
 
 上述三个函数的作用如下：
 + `__get__(self, instance, owner)`：返回属性的值，当属性不存在时，拋出`AttributeError`异常
@@ -60,21 +60,21 @@ del user.name
 
 内置的`property类`是实现数据描述符的简单方式，`property类`将对属性的访问(读，写，删除)操作对应到函数，然后在函数中执行检查。示例如下：
 ```
-cass person(object):
+class person(object):
 	def __init__(self, name):
-		self.__name = name	
+		self._name = name	
 	
 	def getName(self):
 		print "fetch name"
-		return self.__name
+		return self._name
 	
 	def setName(self, name):
 		print "change name"
-		self.__name = name
+		self._name = name
 	
 	def delName(self):
 		print "remove name"
-		del self.__name
+		del self._name
 	
 	name = property(getName, setName, delName, "name property docs")
 
@@ -82,6 +82,20 @@ bob = person('bob')
 bob.name = 'john'
 
 print bob.name
+```
+
+也可以使用把`property类`当作装饰器使用，`@property`提供如下：
+```
+class person(object):
+	@property
+	def name(self): return self._name
+
+	@name.setter
+	def name(self, value): self._name = value
+
+	@name.deleter
+	def name(self): del self._name
+
 ```
 
 --------------------------------------------------------------------------------
