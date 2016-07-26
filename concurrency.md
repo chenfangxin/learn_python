@@ -20,6 +20,7 @@ Linux的进程基于`fork`实现。Python中，使用进程模型能绕开`GIL`�
 + 协程(Coroutine)
 
 Python中，是通过增强`generator`来实现`coroutine`的，主要有如下工作：
+
 1. 重新定义`yield`为一个**表达式**，而不是一个**语句**
 2. 给`generator`增加`send(value)`方法。通过该方法给`generator`传值，作为`yield`语句的结果
 3. 给`generator`增加`throw(type[, value[, traceback]])`方法。
