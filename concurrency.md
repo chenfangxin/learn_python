@@ -26,7 +26,7 @@ Python中，通过增强`generator`来实现`coroutine`，主要有如下工作�
 3. 给`generator`类增加了`throw(type[, value[, traceback]])`方法。
 4. 给`generator`类增加了`close`方法。该方法会终止`generator`
 
-示例如下：
+使用这些Python新增特性，构造一个简单的`Coroutine`，示例如下：
 ```
 def grep(pattern):
 	print 'Looking for ', pattern
@@ -41,6 +41,7 @@ def grep(pattern):
 g = grep('python')
 g.next() 	# 第一次对generator调用next, 会启动该generator
 g.send('python generator')
-g.throw(RuntimeError, 'You're hosed')
+g.throw(RuntimeError, "You're hosed")
+g.close()
 ```
 
