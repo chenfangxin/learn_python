@@ -44,7 +44,7 @@ l=list(map(add, a)) # 在Iterable的每个元素上，施加指定函数
 --------------------------------------------------------------------------------
 ## 迭代器(Iterator)
 
-迭代器(`Iterator`)代表对数据流的一次遍历。
+迭代器(`Iterator`)代表对数据流的**一次**遍历。
 
 在Python中，迭代过程，就是先调用可迭代对象(`Iterable Object`)的`__iter__`函数，获得迭代器，
 然后不断迭代器的`__next__`函数，直到抛出`StopIteration`异常。
@@ -122,3 +122,5 @@ dir(g)  # g 符合生成器的条件
 for n in g:
 	pritn(n)
 ```
+
+更多`generator`的用法示例，见[using generator](using_generator.md)。
