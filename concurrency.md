@@ -37,11 +37,14 @@ def grep(pattern):
 					print line
 	except GeneratorExit:
 		print 'Go away, Goodbye'
+		yield 'final here'
 
 g = grep('python')
 g.next() 	# 第一次对generator调用next, 会启动该generator
 g.send('python generator')
-g.throw(RuntimeError, "You're hosed")
+a = g.throw(RuntimeError, "You're hosed, add python")
+
 g.close()
 ```
 
+生成器(`generator`)的`throw`方法有些复杂。此方法被用来向`generator`投递异常信息，以便`generator`内部能处理。
