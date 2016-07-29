@@ -9,6 +9,5 @@
 + [装饰器](decorator.md)
 + [描述符](descriptor.md)
 + [元类](metaclass.md)
-
 + [系统编程](system.md)
 + [性能优化](performance.md)
