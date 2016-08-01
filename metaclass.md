@@ -35,14 +35,14 @@ Python中允许在各种场景中插入自定义逻辑：
 在[类装饰器](decorator.md)中，已经见过了这些操作。
 
 
-+ 使用`type`函数
+### 使用`type`函数
 
 在Python中，可以通过`type()`函数，动态的创建类，`type()`的原型如下：
-```
-type(类名，父类元组(针对继承的情况，可以为空), 包含属性的字典)
-```
+
+> type(类名，父类元组(针对继承的情况，可以为空), 包含属性的字典)
 
 示例如下：
+
 ```
 Foo = type('Foo', (), {'bar':Ture})
 
@@ -57,9 +57,10 @@ class Foo(object):
 **元类**是用来创造类的，可以称之为`类工厂`。`type`函数就是Python内建的元类。
 
 
-+ 使用`__metaclass__`属性
+### 使用`__metaclass__`属性
 
 在用`class`定义类时，可以为其添加`__metaclass__`属性，例如：
+
 ```
 class Foo(object):
 	__metaclass__ = statements
@@ -74,9 +75,8 @@ class Foo(object):
 
 在Python中，`object`处于继承关系的顶端，即`object`是所有类型的父类；`type`在类型-实例关系的顶端，即所有对象都是`type`的实例。
 
-+ `object`是`type`的一个实例： object.__class__ == <type 'type'>
-+ `object`没有父类： object.__base__ == <type 'NoneType'>
-+ `type`是`object`的子类：type.__base__ == <type 'object'>
-+ `type`是自己的实例：type.__class__ == <type 'type'>
-
+> `object`是`type`的一个实例： object.__class__ == <type 'type'>
+> `object`没有父类： object.__base__ == <type 'NoneType'>
+> `type`是`object`的子类：type.__base__ == <type 'object'>
+> `type`是自己的实例：type.__class__ == <type 'type'>
 
