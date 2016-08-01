@@ -35,7 +35,8 @@ Python中允许在各种场景中插入自定义逻辑：
 在[类装饰器](decorator.md)中，已经见过了这些操作。
 
 
-+ `type`函数
++ 使用`type`函数
+
 在Python中，可以通过`type()`函数，动态的创建类，`type()`的原型如下：
 ```
 type(类名，父类元组(针对继承的情况，可以为空), 包含属性的字典)
@@ -56,7 +57,8 @@ class Foo(object):
 **元类**是用来创造类的，可以称之为`类工厂`。`type`函数就是Python内建的元类。
 
 
-+ `__metaclass__`属性
++ 使用`__metaclass__`属性
+
 在用`class`定义类时，可以为其添加`__metaclass__`属性，例如：
 ```
 class Foo(object):
