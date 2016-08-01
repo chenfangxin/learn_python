@@ -65,5 +65,16 @@ class Foo(object):
 
 --------------------------------------------------------------------------------
 ## type和object
+在Python中，存在两种关系：类型的继承关系，类型-实例关系。
+
++ 类型的继承关系：使用`__base__/__bases__`属性查看
++ 类型-实例关系：使用`__class__`属性查看
+
+在Python中，`object`处于继承关系的顶端，即`object`是所有类型的父类；`type`在类型-实例关系的顶端，即所有对象都是`type`的实例。
+
++ `object`是`type`的一个实例： object.__class__ == <type 'type'>
++ `object`没有父类： object.__base__ == <type 'NoneType'>
++ `type`是`object`的子类：type.__base__ == <type 'object'>
++ `type`是自己的实例：type.__class__ == <type 'type'>
 
 
