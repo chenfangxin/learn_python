@@ -84,7 +84,7 @@ bob.name = 'john'
 print bob.name
 ```
 
-也可以使用把`property类`当作装饰器使用，`@property`提供**读操作**，`setter`和`deleter`分别提供**写操作**和**删除**，示例如下：
+也可以使用把`property类`当作装饰器使用，`@property`提供属性的**读操作**，`setter`和`deleter`分别提供属性的**写操作**和**删除**，示例如下：
 
 ```
 class person(object):
