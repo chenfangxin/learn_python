@@ -7,17 +7,50 @@ Python中的并发，分为三种类型：
 + 协程
 
 --------------------------------------------------------------------------------
-+ 进程(Process)
+## 进程(Process)
 
 Linux的进程基于`fork`实现。Python中，使用进程模型能绕开`GIL`，充分发挥多核性能。
 
++ 使用`fork`实现多进程
+
+常常使用`os.fork()`来创建守护进程(Daemon)，示例如下：
+
+```
+import os
+try:
+	if os.fork() > 0:
+		os._exit(0)
+except OSError, error:
+	print 'fork 1'
+	os._exit(1)
+
+os.chdir('/')
+os.setsid()
+os.umask(0)
+
+try:
+	pid = os.fork()
+	if pid > 0:
+		print 'Daemon PID %d' % pid
+		os._exit(0)
+except OSError, error:
+	print 'fork 2'
+	os._exit(1)
+
+DO_DAEMON_FUNC()
+
+```
+
++ 使用`multiprocessing`库
+
 
 --------------------------------------------------------------------------------
-+ 线程(Thread)
+## 线程(Thread)
 
++ 使用`threading`库
 
 --------------------------------------------------------------------------------
-+ 协程(Coroutine)
+## 协程(Coroutine)
 
 Python中，通过增强`generator`来实现`coroutine`，主要有如下工作：
 
