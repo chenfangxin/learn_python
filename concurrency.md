@@ -81,3 +81,5 @@ g.close()
 ```
 
 生成器(`generator`)的`throw`方法有些复杂。此方法被用来向`generator`投递异常信息，以便`generator`内部能处理。
+
+
