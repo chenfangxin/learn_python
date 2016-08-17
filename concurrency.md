@@ -102,7 +102,30 @@ g.close()
 
 ### 使用`@asyncio.coroutine/yield from`实现`coroutine`
 
-在Python 3.3中，引入了`yield from`语法
+在Python 3.3中，引入了`yield from`语法，将`yield`动作委托给内层`generator`，并且可以将`send`信息传递给内层`generator`。
+
+为了理解`yield from`，首先定义一个简单的`generator`：
+```
+def zero_to_nine():
+	for i in range(10):
+		yield i
+```
+
+如果一个函数调用了`generator`，并且还希望以`generator`的形式返回值，则必须用`for`循环重新`yield`一次，如下例：
+```
+def wrap_generator():
+	for i in zero_to_nine():
+		yield i
+print list(zero_to_nine())
+print list(wrap_generator())
+```
+
+现在有了`yield from`语句，就可以优雅的定义如下：
+```
+def process():
+	yield from sub_process()
+
+```
 
 ### 使用`async/await`实现`coroutine`
 
