@@ -75,7 +75,9 @@ elif <test2> :
 else
 	<statements3>
 ```
+
 上述语句中，`elif`和`else`是可选的。
+
 Python中，用如下规则进行真值测试：
 + 任何非零数字或非空对象都为真；数字零，False，空对象(比如空tuple, 空list，空set等)以及特殊对象None被认为假
 + 用户定义的类，如果定义的`__bool__`或`__len__`返回0或False，被视为假
@@ -93,6 +95,7 @@ while condition :
 else :
 	statements2
 ```
+
 `for`示例如下：
 ```
 for var in iterable :
@@ -100,7 +103,8 @@ for var in iterable :
 else :
 	statements2
 ```
-以上示例中，`else`语句是可选的。
+
+以上示例中，`else`语句是可选的, 只有当循环正常结束时，才会执行`else`语句。
 
 在Python中，可以用`break语句`终止当前层次的循环，对应的`else语句`也不执行；`continue语句`用于跳过本轮循环的剩余语句，进入下一轮循环。
 
