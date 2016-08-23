@@ -10,4 +10,5 @@
 + [描述符](descriptor.md)
 + [元类](metaclass.md)
 + [系统编程](system.md)
++ [调用C库](c_libs.md)
 + [性能优化](performance.md)
