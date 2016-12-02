@@ -58,7 +58,8 @@ del user.name
 --------------------------------------------------------------------------------
 ## property类
 
-内置的`property类`是实现数据描述符的简单方式，`property类`将对属性的访问(读，写，删除)操作对应到函数，然后在函数中执行检查。示例如下：
+内置的`property类`是实现数据描述符的简单方式，`property类`将对属性的访问(读，写，删除)操作映射到函数，然后可以在函数中执行参数检查。示例如下：
+
 ```
 class person(object):
 	def __init__(self, name):
@@ -113,8 +114,7 @@ class person(object):
 
 **注意：**在继承树中各父类中查找时，其顺序按照[MRO算法](mro.md)执行。
 
-
-`__getattribute__(self, name)`和`__getattr__(self, name)`的区别：
++ `__getattribute__(self, name)`和`__getattr__(self, name)`的区别：
 
 `__getattribute__`函数是访问对象实例的属性的总入口。如果定义了`__getattribute__`函数，则通过实例访问属性时，一定会调用此函数，上述属性查找顺序的`1-4`步，就是在此函数(`object.__getattribute__`)中实现的; 而`__getattr__`函数只在查找属性的最后阶段调用。
 
