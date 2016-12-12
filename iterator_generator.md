@@ -108,13 +108,13 @@ for i in f:
 
 生成器表达式(`Generator Expressions`)是一类特殊的生成器函数，其语法与列表解析很像：
 ```
-( expr for var in iterable)
-( expr for var in iterable if cond_expr )
+(expr for var in iterable)
+(expr for var in iterable if cond_expr )
 ```
 
 例如：
 ```
-g = ( i+1 for i in range(10) if i%2)
+g = (i+1 for i in range(10) if i%2)
 
 type(g) # g 是一个生成器
 dir(g)  # g 符合生成器的条件
