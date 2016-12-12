@@ -116,8 +116,8 @@ method = dec_a(params_a)(dec_b(params_b)(method))
 ```
 def dec(cls):
 	class wrapper:	# 在函数中定义类
-		def __init__(self, *args):
-			self.wrapped = cls(*args)
+		def __init__(self, \*args):
+			self.wrapped = cls(\*args)
 
 		def __getattr__(self, name):
 			return getattr(self.wrapped, name)
