@@ -4,6 +4,7 @@
 + [函数](function.md)
 + [容器](container.md)
 + [类](class.md)
++ [异常处理](exception.md)
 + [迭代器与生成器](iterator_generator.md)
 + [场景管理器](context_manager.md)
 + [装饰器](decorator.md)
