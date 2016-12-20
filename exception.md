@@ -29,3 +29,12 @@ else:
 `except`后面带的是异常(exception)的名字，还可以带异常参数值，这个值是`raise`语句抛出异常时赋值的；`else`语句在没有发生异常时执行；
 `finally`语句无论有无异常发生，都会执行，所以是作清除动作的理想位置。
 
+在Python中，要捕获多个异常时，需要将要捕获的异常放在一个元组(Tuple)中，并作为第一个参数给`except`语句，例如：
+
+```
+try:
+	l = ['a', 'b']
+	int(l[2])
+except (ValueError, IndexError) as e:
+	pass
+```
