@@ -22,9 +22,28 @@ def dec(func):
 def foo(x):
 	print("value is %d" % x)
 
+foo.__name__  #
 foo = dec(foo)   # foo 被装饰了, 添加了新功能
 
 foo(1)
+foo.__name__  # 变为wrapper了
+```
+
+> Python中使用语法糖`@`来简化装饰器的声明，`@`表示对装饰器的调用
+
+由上例可知，经过装饰后，函数的`__name__`/`__doc__`等属性可能会变，为了解决这个问题，可以使用`functools.wraps`，如下：
+
+```
+def dec(func):
+	@functools.wraps(func)
+	def wrapper(args):
+		print("Before func")
+		return func(args)
+	return wrapper
+
+@dec
+def foo(x):
+	print("value is %d" % x)
 ```
 
 + 用类实现函数装饰器
@@ -50,7 +69,7 @@ foo(1)	# 调用__call__函数, self为dec实例
 
 这种通过类实现的函数装饰器，用途有一定限制，特别要注意的是装饰类的成员函数时，`self`指向了装饰器类的实例。所以普遍用闭包实现函数装饰器。
 
-Python中使用语法糖`@`来简化装饰器的声明，`@`表示对装饰器的调用，多种示例如下：
+装饰器的多种示例如下：
 
 + 单个Decorator，Decorator不带参数
 ```
