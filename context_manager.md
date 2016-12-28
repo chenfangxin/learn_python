@@ -17,6 +17,7 @@ class Test:
 	def __exit__(self, *args):
 		print 'Here is __exit__'
 
-with Test as t:
+
+with Test() as t:
 	print 't is ', t
 ```
