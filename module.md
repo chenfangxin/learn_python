@@ -15,5 +15,7 @@ Python模块文件的搜索路径：
 3. 标准库的目录
 4. 任何`.pth`文件指定的内容
 
-#### 模块中的私有符号
+导入模块时，有两种方式：
+1. `import MODULE`
+2. `from MODULE import XXX`
 
