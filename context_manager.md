@@ -2,7 +2,7 @@
 
 `with ... as`语句是用来取代传统的`try ... finally`语法的。
 
-场景管理器(`context manager`)基本思想是`with`求值的对象必须有一个`__enter__`方法和一个`__exit__`方法。
+场景管理器(`context manager`)基本思想是：`with`求值的对象必须有一个`__enter__`方法和一个`__exit__`方法。
 `__enter__`方法返回的对象赋值给`as`后的变量；`with ... as`后面的代码块执行完或抛出异常时，就会执行对象的`__exit__`方法。
 
 > 定义了`__enter__`和`__exit__`方法的对象，称为场景管理器(`context manager`)。
@@ -21,3 +21,5 @@ class Test:
 with Test() as t:
 	print 't is ', t
 ```
+
+场景管理器实际上是构建了一个执行环境，用`__enter__`方法初始化这个环境，用`__exit__`方法清除环境。比较典型的应用包括：文件处理，访问临界区(使用锁)等。
