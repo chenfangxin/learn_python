@@ -2,7 +2,7 @@
 
 Linux的进程基于`fork`实现。Python中，使用进程模型能绕开`GIL`，充分发挥多核性能。
 
-+ 使用`fork`实现多进程
+###  使用`fork`实现多进程
 
 `fork`是系统调用，用来创建新的进程，示例如下：
 
@@ -48,7 +48,8 @@ DO_DAEMON_FUNC()
 > 第一次fork后，父进程退出，子进程被init接管，从而脱离终端的控制
 > 第二次fork是用来禁止进程重新打开控制终端
 
-+ 使用`multiprocessing`库
+### 使用`multiprocessing`库
 
+`multiprocessing`库中，以对象`Process`来表示进程。
 
 
