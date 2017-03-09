@@ -52,4 +52,31 @@ DO_DAEMON_FUNC()
 
 `multiprocessing`库中，以对象`Process`来表示进程。
 
++ 创建进程
+如下代码示例创建进程：
+```
+from multiprocessing import Process
 
+def f(name):
+	print 'hello', name
+
+if __name__=='__main__':
+	p = Process(target=f, args=('bob'))
+	p.start() # 启动进程
+	p.join()  # 等候进程结束
+```
+
++ 进程间通讯
+使用`multiprocessing.Queue`和`multiprocessing.Pipes`进行进程间通讯。
+
+
++ 进程间同步
+使用`multiprocessing.Lock`进行进程间同步。
+
+
++ 进程间共享数据
+使用`multiprocessing.Value`和`multiprocessing.Array`进行进程间共享数据。
+
+
++ 创建进程池
+使用`multiprocessing.Pool`创建进程池。
