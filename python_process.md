@@ -61,7 +61,7 @@ def f(name):
 	print 'hello', name
 
 if __name__=='__main__':
-	p = Process(target=f, args=('bob'))
+	p = Process(target=f, args=('bob',))
 	p.start() # 启动进程
 	p.join()  # 等候进程结束
 ```
