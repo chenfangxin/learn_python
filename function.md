@@ -20,7 +20,7 @@ def FUNC_NAME(ARGS) :
 --------------------------------------------------------------------------------
 ## 参数和返回值
 
-在Python中，从赋值的角度理解参数和返回值的传递：
+在Python中，从**赋值**的角度理解参数和返回值的传递：
 + 参数传递：参数传递是一个赋值的过程，就是将**形参**绑定到**实参**的值上
 + 返回值：返回值的传递也是一个赋值的过程
 
@@ -28,11 +28,11 @@ def FUNC_NAME(ARGS) :
 ```
 def test(arg) :
 	arg[0] = 'cfx'  # 改变形参的内容
-	return arg  
+	return arg
 
 a = [0,1,2,3]
 b = test(a)	# 参数传递是将形参arg与实参a绑定到同一个值, 因此改变arg的内容，也反映在a上
-a 
+a
 a is b  # a和b绑定到同一个值
 
 ```
@@ -41,6 +41,9 @@ a is b  # a和b绑定到同一个值
 也可以作为函数的参数和返回值。
 
 ### 可变参数
+在Python中，使用`*args`给函数传递一个可变数量的非`key/value`参数列表；使用`**kwargs`给函数传递一个可变数量的`key/value`参数列表。
+
+> 注意：名字不一定非要是`args`和`kwargs`，但是`*`是必须的，因此用`*vars`替换`*args`也是一样。
 
 ```
 def foo(*args, **kwargs):
@@ -48,6 +51,15 @@ def foo(*args, **kwargs):
 	print kwargs
 
 foo(1, 2, 3, x=4, y=5, z=6)
+
+def func(*args):
+	for arg in args:
+		print arg
+
+var_list=(1,2,3,4,'x','y')
+
+func(*var_list) # 使用*表示要将列表var_list解开
+
 ```
 
 #### 参数的默认值
