@@ -1,5 +1,11 @@
 # Python中的`coroutine`
 
++ 使用`yield/send`实现`coroutine`
++ 使用`@asyncio.coroutine/yield from`实现`coroutine`
++ 使用`async/await`实现`coroutine`
+
+----------------------------------------
+
 ### 使用`yield/send`实现`coroutine`
 
 Python中，`yield`被用来实现`generator`。通过如下工作，利用`generator`实现`coroutine`：
@@ -10,6 +16,7 @@ Python中，`yield`被用来实现`generator`。通过如下工作，利用`gene
 4. 给`generator`类增加了`close`方法。该方法会终止`generator`
 
 使用这些Python新增特性，构造一个简单的`Coroutine`，示例如下：
+
 ```
 def grep(pattern):
 	print 'Looking for ', pattern
@@ -31,8 +38,6 @@ g.close()
 ```
 
 生成器(`generator`)的`throw`方法有些复杂。此方法被用来向`generator`投递异常信息，以便`generator`内部能处理。
-
-### 使用`@asyncio.coroutine/yield from`实现`coroutine`
 
 在Python 3.3中，引入了`yield from`语法，将`yield`动作委托给内层`generator`，并且可以将`send`信息传递给内层`generator`。
 
@@ -59,10 +64,12 @@ def process():
 
 ```
 
-### 使用`greenlet`
+----------------------------------------
+### 使用`@asyncio.coroutine/yield from`实现`coroutine`
 
+----------------------------------------
 
 ### 使用`async/await`实现`coroutine`
 
-在Python 3.5中，引入了`async/await`语法
+在Python 3.5中，引入了关于协程的新语法——`async/await`。
 
