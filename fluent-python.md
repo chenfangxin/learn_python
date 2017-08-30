@@ -13,4 +13,5 @@
 + 字符串表示形式和格式化(String representation and formating)
 + 管理上下文(Managed contexts)
 
+除了上述场景，Python中的内置函数也有对应的魔术方法。
 
