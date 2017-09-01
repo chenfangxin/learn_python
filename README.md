@@ -15,3 +15,8 @@
 + [并发编程](concurrency.md)
 + [调用C库](c_libs.md)
 + [性能优化](performance.md)
+
+----------------------------------------
+
++ [流畅的Python](fluent_python.md)
+
