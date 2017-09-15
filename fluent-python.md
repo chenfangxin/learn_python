@@ -43,19 +43,22 @@ Python内置的数据结构有序列(sequence)，字典(dict)，集合(set)，�
 * 列表拼接和增量赋值
 
   `seq1 + seq2`运算是将两个列表拼接，并返回一个新列表，对应的`magic method`是`__add__`
+
   `seq * n`运算是将列表复制`n`份，然后拼接起来，对应的`magic method`是`__mul__`
+
   `seq1 += seq2`运算会就地改变`seq1`，其过程取决于`seq1`，如果`seq1`实现了`__iadd__`，则调用之；如果没有实现则调用`__add__`，效果变为`seq1 = seq1 + seq2`
+
   `seq *= n`运算会就地改变`seq`，其对应的`magic method`是`__imul__`
 
 * 列表排序
 
   list.sort方法与内置排序函数sorted的区别： list.sort是就地排序，会改变list；sorted则会返回一个新的列表，不改变原来的list。
 
-
+  用`bisect`来管理已经排好序的列表
 
 #### 元组(Tuple)
 
-+ 元组不仅仅是不可变列表，可以将元组视为记录(record)，因为元组中的元素位置是固定不变的。
+* 元组不仅仅是不可变列表，可以将元组视为记录(record)，因为元组中的元素位置是固定不变的。
 
 ## 函数
 
