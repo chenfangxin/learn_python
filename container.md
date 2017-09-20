@@ -146,6 +146,7 @@ for var in S:
 
 字典就是HASH表，字典中以`Key:Value`的形式存储元素，其中`Key`是不可变值(数值，字符串，Tuple，Frozenset等)，并且`Key`不能重复。
 字典的常用操作如下：
+
 + 构造字典
 ```
 D = {'spam':2, 'eggs':3}
