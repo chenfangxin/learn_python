@@ -51,8 +51,7 @@ max(a)	# 遍历iterable，查找最大值
 
 迭代器(`Iterator`)代表对数据流的**一次**遍历。
 
-在Python中，迭代过程，就是先调用可迭代对象(`Iterable Object`)的`__iter__`函数，获得迭代器，
-然后不断迭代器的`__next__`函数，直到抛出`StopIteration`异常。
+在Python中，迭代过程就是先调用可迭代对象(`Iterable Object`)的`__iter__`函数，该函数返回迭代器对象，然后不断迭代器的`__next__`函数，直到抛出`StopIteration`异常。
 
 --------------------------------------------------------------------------------
 ## 生成器(Generator)
@@ -77,17 +76,19 @@ class fib:
 		return self
 
 	def __next__(self):
-		if(a<max):
+		if(self.a<self.max):
 			cur = self.a
 			self.a, self.b = self.b, self.a+self.b	
 			return cur
 		else:
-			raise StopIteration();
+			raise StopIteration()
 	
 f = fib(20)
 for i in f:
 	print(i)
 ```
+
+> 注意：在Python2.7中，内建的next()函数调用的是对象的next()方法，而不是__next__方法
 
 Python中一般用生成器函数(`Generator Function`)来产生生成器(`Generator`)。用关键字`yield`来实现生成器函数(`Generator Function`)，`yield`是语法糖。示例如下：
 ```
