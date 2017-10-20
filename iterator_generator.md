@@ -5,7 +5,7 @@
 + 生成器(Generator)
 
 --------------------------------------------------------------------------------
-## 迭代(Iteration)和可迭代对象(Iterable Object)
+## 迭代
 
 迭代(`Iteration`)就是**遍历**，是一种访问数据的方式。迭代的特点是只能向前，不能后退。
 迭代动作只能施加于可迭代对象(`Iterable Object`)上，可迭代对象(`Iterable Object`)遵守Python的**迭代协议(Iteration Protocol)**：
