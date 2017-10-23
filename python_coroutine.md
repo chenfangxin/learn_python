@@ -67,6 +67,8 @@ def process():
 ----------------------------------------
 ### 使用`@asyncio.coroutine/yield from`实现`coroutine`
 
+`asyncio`是Python3.4版本引入的标准库。
+
 ----------------------------------------
 
 ### 使用`async/await`实现`coroutine`

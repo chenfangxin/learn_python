@@ -122,3 +122,7 @@ class person(object):
 
 > 调用内置函数 `getattr(obj, name[, default]` 等同于`obj.name`
 
+当以`obj.attr = val`的形式，对属性赋值时，入口函数为`__setattr__`，该函数按如下规则查找属性：
+1. 类/父类的`描述符`
+2. 实例属性
+

@@ -21,7 +21,7 @@ for var in a:
 	print(var)
 ```
 
-在Python中，除了`for循环`，还有列表解析，`in`成员测试，`sum`，`min/max`以及``filter`，`map`，`reduce`函数等都用到迭代。
+在Python中，除了`for循环`，还有列表推导/字典推导/集合推导，`in`成员测试，`sum`，`min/max`以及``filter`，`map`，`reduce`函数，元组拆包等都用到迭代。
 
 列表解析(List Comprehension)是用来构造列表的，如下示例
 
