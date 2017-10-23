@@ -76,7 +76,7 @@ class Foo(object):
 
 > 新式类中，`__base__`属性表示直接父类，`__bases__`属性表示继承树中基类列表
 
-在Python中，`object`处于**继承关系**的顶端，即`object`是所有类型的父类；`type`在**类型-实例关系**的顶端，即所有对象都是`type`的实例。
+在Python中，`object`处于**继承关系**的顶端，即`object`是所有类型的父类；`type`在**类型-实例关系**的顶端，即所有类型都是`type`的实例。
 
 `type`和`object`的关系如下：
 
@@ -86,4 +86,4 @@ class Foo(object):
 + `type`是自己的实例，isinstance(type, type) --> true
 
 > 可以用`isinstance()`函数，来判断一个对象是否为某个类的实例
-
+> 可以用`issubclass()`函数，来判断是否为子类
