@@ -26,7 +26,7 @@
 + `__set__(self, instance, value)`：设置属性的值，不返回任何值
 + `__delete__(self, instance)`：控制属性删除操作，不返回任何值
 
-上述函数的参数中，当通过对象实例访问属性时，`instance`表示该对象； 通过类访问属性时，`instance`为None。
+上述函数的参数中，当通过对象实例访问属性时，`instance`表示该对象； 通过类访问属性时，`instance`为None。`owner`表示所有者的类。
 
 描述符协议的简单示例如下：
 ```
@@ -118,6 +118,7 @@ class person(object):
 
 + `__getattribute__(self, name)`和`__getattr__(self, name)`的区别：
 
-`__getattribute__`函数是访问对象实例的属性的总入口。如果定义了`__getattribute__`函数，则通过实例访问属性(即执行`obj.attr`)时，一定会调用此函数，上述属性查找顺序的`1-4`步，就是在此函数(`object.__getattribute__`)中实现的; 而`__getattr__`函数只在查找属性的最后阶段调用。
+`__getattribute__`函数是访问对象实例的属性的总入口。如果重载了`__getattribute__`函数，则通过实例访问属性(即执行`obj.attr`)时，一定会调用此函数，上述属性查找顺序的`1-4`步，就是在此函数(`object.__getattribute__`)中实现的; 而`__getattr__`函数只在查找属性的最后阶段调用。
 
 > 调用内置函数 `getattr(obj, name[, default]` 等同于`obj.name`
+
