@@ -50,7 +50,7 @@ DO_DAEMON_FUNC()
 
 ### 使用`multiprocessing`库
 
-`multiprocessing`库中，以对象`Process`来表示进程。
+`multiprocessing`在Python标准库中。`multiprocessing`中以对象`Process`来表示进程。
 
 + 创建进程
 如下代码示例创建进程：
