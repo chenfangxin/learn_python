@@ -88,7 +88,7 @@ def foo(bar=None):
 
 在Python中，根据`LEGB原则`来决定作用域中变量的可见性：
 + L(Local)：本地作用域，指函数体内部 
-+ E(Enclosing)：嵌套作用域，指上一层函数的内部
++ E(Enclosing)：嵌套作用域，指嵌套定义的函数的上一层函数的内部
 + G(Global)：全局作用域，指脚本文件（模块）的内部
 + B(Builtin)：内建作用域，指Python解释器内部
 
