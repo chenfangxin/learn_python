@@ -65,7 +65,9 @@ class Foo(object):
 class Foo(object):
 	__metaclass__ = statements
 ```
-如果类定义了`__metaclass__`属性，那么Python会用该属性来创建类对象。实际上，Python在创建类对象时，都会在其继承树中搜索`__metaclass__`属性，若找不到，才按Python内建的`type`来创建类对象。
+如果类定义了`__metaclass__`属性，那么Python会用该属性来创建类对象。实际上，Python在创建类对象时，都会在其**继承树**中或**所在模块**中搜索`__metaclass__`属性，若找不到，才按Python内建的`type`来创建类对象。
+
+当模块中定义了`__metaclass__`属性，意味着模块中所有的类都是通过这个元类来创建的。
 
 `__metaclass__`中放置的是`type`或`type`的子类。
 
