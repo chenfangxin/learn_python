@@ -8,7 +8,9 @@
 
 ### 使用`yield/send`实现`coroutine`
 
-Python中，`yield`被用来实现`generator`。通过如下工作，利用`generator`实现`coroutine`：
+Python中，`yield`被用来实现`generator`。`generator`与`coroutine`的共通之处在于，函数能让渡执行权，切换到其他函数执行。
+
+通过如下工作，利用`generator`实现`coroutine`：
 
 1. 将`yield`重新定义为一个**表达式**，而不是一个**语句**
 2. 给`generator`类增加了`send(value)`方法。通过该方法给`generator`传值，作为`yield`语句的结果
