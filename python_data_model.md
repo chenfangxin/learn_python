@@ -1,6 +1,6 @@
 # Python Data Model
 
-源自《The Python Language Reference》的第三章《Data Model》
+源自Python 3.6版本的《The Python Language Reference》的第三章《Data Model》
 --------------------------------------------------------------------------------
 
 ## 对象(Object)，值(Value)和类型(Type) 
@@ -43,8 +43,37 @@
 + Mapping
 
 + Callable
+  此类型的对象可以被调用，`callable`类型的对象，有如下几种： `User-defined function`，`Instance method`，`Generator function`，`Coroutine function`，`Asynchronous generator function`，`Built-in function`，`Built-in method`，`Classes`，`Class instance`。
 
-  `callable`类型的对象，有如下几种： `User-defined function`，`Instance method`，`Generator function`，`Coroutine function`，`Asynchronous generator function`，`Built-in function`，`Built-in method`，`Classes`，`Class instance`。
+++ User-defined function
+
+  使用`def`语句定义函数
+
+++ Instance method
+
+++ Generator function
+
+  当一个函数体类使用了`yield`语句，就将此函数称为`Generator function`。此类函数被调用时，总是返回一个迭代器(Iterator Object)；调用该迭代器的`__next__()`方法，会让函数继续执行；当此类函数执行`return`或结束时，会丢出`StopIteration`异常。
+
+++ Coroutine function
+
+  使用`async def`语句定义的函数，称为`coroutine function`。此类函数被调用时，会返回一个`coroutine object`。
+
+++ Asynchronous generator function
+
+  使用`async def`语句定义，并且函数体内使用了`yield`语句的函数，称为`asynchronous generator function`。此类函数被调用时，会返回一个异步迭代器(`asynchronous iterator object`)
+
+++ Built-in function
+
+++ Built-in method
+
+++ Classes
+
+  类是可调用的，会返回该类的一个实例(Instance)
+
+++ Class Instance
+
+  定义了`__call__`方法的实例，可以当作函数调用。
 
 + Module
 + Custom Class
