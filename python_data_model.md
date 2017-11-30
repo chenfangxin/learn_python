@@ -1,6 +1,8 @@
 # Python Data Model
 
 源自Python 3.6版本的《The Python Language Reference》的第三章《Data Model》
+
+`https://docs.python.org/3.6/reference/datamodel.html`
 --------------------------------------------------------------------------------
 
 ## 3.1 对象(Object)，值(Value)和类型(Type) 
@@ -102,13 +104,21 @@
 + `object.__str__(self)`
 + `object.__bytes__(self)`
 + `object.__format__(self, format_spec)`
-+ `object.__lt__(self, other)`/`object.__le__(self, other)`/`object.__eq__(self, other)`/`object.__eq__(self, other)`/`object.__ne__(self, other)`/`object.__gt__(self, other)`/`object.__ge__(self, other)`
+
++ `object.__lt__(self, other)`
++ `object.__le__(self, other)`
++ `object.__eq__(self, other)`
++ `object.__eq__(self, other)`
++ `object.__ne__(self, other)`
++ `object.__gt__(self, other)`
++ `object.__ge__(self, other)`
+
 + `object.__hash__(self)`
 + `object.__bool__(self)`
   
 ### 3.3.2 定制属性访问(`attribute access`)
 
-  `attribute access`就是访问类实例的属性，形如`x.name`。
+	通过如下特殊函数，定制访问实例属性的操作(`x.name`):
 
 + `object.__getattr__(self, name)`
 
