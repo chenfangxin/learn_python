@@ -91,15 +91,47 @@
 
   Python程序中，特定的语法所代表的操作，对应于特定的函数。通过定制这些特殊函数，可以实现操作的自定义，这称为`operator overloading`。例如`x[i]`对应的操作为`type(x).__getitem__(x, i)`，因此定制类的`__getitem__`函数，就可以实现自定义的`x[i]`。
  
-### 3.3.1 基本定制
+### 3.3.1 定制基本的类方法
 
+  关键是要搞清楚该类方法对应的场景！
 
-### 3.3.2 定制属性访问
++ `object.__new__(cls[,...])`
++ `object.__init__(self[,...])`
++ `object.__del__(self)`
++ `object.__repr__(self)`
++ `object.__str__(self)`
++ `object.__bytes__(self)`
++ `object.__format__(self, format_spec)`
++ `object.__lt__(self, other)`/`object.__le__(self, other)`/`object.__eq__(self, other)`/`object.__eq__(self, other)`/`object.__ne__(self, other)`/`object.__gt__(self, other)`/`object.__ge__(self, other)`
++ `object.__hash__(self)`
++ `object.__bool__(self)`
+  
+### 3.3.2 定制属性访问(`attribute access`)
+
+  `attribute access`就是访问类实例的属性，形如`x.name`。
+
++ `object.__getattr__(self, name)`
+
+  
++ `object.__getattribute__(self, name)`
++ `object.__setattr__(self, name, value)`
++ `object.__delattr__(self, name)`
++ `object.__dir__(self)`
+
 #### 3.3.2.1 实现描述符(Descriptor) 
+
+
++ `object.__get__(self, instance, owner)`
++ `object.__set__(self, instance, value)`
++ `object.__delete__(self, instance)`
++ `object.__set_name__(self, instance)`
+
 #### 3.3.2.2 使用描述符(Descriptor)
+
 #### 3.3.2.3 使用`__slots__`
 
 ### 3.3.3 定制类创建
+
 #### 3.3.3.1 元类(`metaclass`)
 
 ### 3.3.4 定制实例和子类检查
