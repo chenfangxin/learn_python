@@ -17,26 +17,33 @@
 
 下面介绍Python中内建(builtin)的类型：
 + None
+
   此类型对象只有一个值，通过内建关键字`None`访问，其布尔值为`False`。
 
 + NotImplemented
+
   此类型对象只有一个值，通过内建关键字`NotImplemented`访问，其布尔值为`True`。
 
 + Ellipsis
+
   此类型对象只有一个值，通过字面量`...`或内建关键字`Ellipis`访问，其布尔值为`True`。
 
 + number.Number
+
   此类型的对象通过数字字面量来创建，或者作为算术运算的返回值。Python区分整数(integer)，浮点数(float)和复数(complex)
 
 + Sequences
+
   通过整数下标或切片(slice)访问Sequences对象中的元素。Sequences分为`immutable`和`mutable`。`immutable`的有`string`，`tuple`，`bytes`；`mutable`的有`list`，`byte array`。
 
 + Set
+
   分为`set`和`frozenset`两种
 
 + Mapping
 
 + Callable
+
   `callable`类型的对象，有如下几种： `User-defined function`，`Instance method`，`Generator function`，`Coroutine function`，`Asynchronous generator function`，`Built-in function`，`Built-in method`，`Classes`，`Class instance`。
 
 + Module
