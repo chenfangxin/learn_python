@@ -118,7 +118,8 @@
 | `__doc__`         | Document string |
 | `__annotations__` | |
 
-    每个类对象都有一个字典对象作为其名字空间(namespace)，即`__dict__`。访问类对象的属性，都被转换为对该字典成员的访问，例如`C.x`转换为`C.__dict__["x"]`。
+
+  每个类对象都有一个字典对象作为其名字空间(namespace)，即`__dict__`。访问类对象的属性，都被转换为对该字典成员的访问，例如`C.x`转换为`C.__dict__["x"]`。
 
 + Class Instance
 
@@ -171,15 +172,18 @@
 	通过如下特殊函数，定制访问实例属性的操作(`x.name`):
 
 + `object.__getattr__(self, name)`
-
   
 + `object.__getattribute__(self, name)`
+
+  该函数属性访问的总入口
+
 + `object.__setattr__(self, name, value)`
+
 + `object.__delattr__(self, name)`
+
 + `object.__dir__(self)`
 
 #### 3.3.2.1 实现描述符(Descriptor) 
-
 
 + `object.__get__(self, instance, owner)`
 + `object.__set__(self, instance, value)`
@@ -188,7 +192,9 @@
 
 #### 3.3.2.2 使用描述符(Descriptor)
 
-#### 3.3.2.3 使用`__slots__`
+#### 3.3.2.3 `__slots__`属性
+
+##### 3.3.2.3.1 使用`__slots__`的注意事项
 
 ### 3.3.3 定制类创建
 
