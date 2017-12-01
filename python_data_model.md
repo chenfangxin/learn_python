@@ -53,6 +53,7 @@
   - User-defined function
 
     使用`def`语句定义函数。函数对象有一些自带的属性，如下：
+
 | 属性名称         | 类型 | 说明 |
 |------------------|------|------|
 | __doc__          | string 或 None | 函数的Document string |
