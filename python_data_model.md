@@ -56,20 +56,29 @@
 
 | 属性名称         | 类型 | 说明 |
 |------------------|------|------|
-| __doc__          | string 或 None | 函数的Document string |
-| __name__         | string | 函数名 |
-| __qualname__     | string | 函数的路径 |
-| __module__       | string | 函数所属的模块名 |
-| __defaults__     | tuple 或 None | 存放参数的缺省值 |
-| __code__         |  |  |
-| __globals__      | dict | 函数中能访问的全局变量 |
-| __dict__         | dict |  |
-| __closure__      | tuple 或 None | 存放 |
-| __annotations__  | dict |  |
-| __kwdefaults__   | dict | 存放命名参数的缺省值 |
+| `__doc__`          | string 或 None | 函数的Document string |
+| `__name__`         | string | 函数名 |
+| `__qualname__`     | string | 函数的路径 |
+| `__module__`       | string | 函数所属的模块名 |
+| `__defaults__`     | tuple 或 None | 存放参数的缺省值 |
+| `__code__`         |  |  |
+| `__globals__`      | dict | 函数中能访问的全局变量 |
+| `__dict__`         | dict |  |
+| `__closure__`      | tuple 或 None | 存放cell对象，每个cell对象存放闭包的一个外部变量 |
+| `__annotations__`  | dict |  |
+| `__kwdefaults__`   | dict | 存放命名参数的缺省值 |
 
   - Instance method
-    
+   实例的方法也是可调用对象，其具有一些特殊的属性：
+
+| 属性  | 说明  |
+|-------|-------|
+| `__self__`   | 代表实例本身 |
+| `__func__`   | 代表该方法的函数体 |
+| `__doc__`    | 该方法的Document string(即`__func__.__doc__`) |
+| `__name__`   | 该方法的函数名(即`__func__.__name__`) |
+| `__module__` | 模块名 |
+ 
   - Generator function
 
     当一个函数体类使用了`yield`语句，就将此函数称为`Generator function`。此类函数被调用时，总是返回一个迭代器(Iterator Object)；调用该迭代器的`__next__()`方法，会让函数继续执行；当此类函数执行`return`或结束时，会丢出`StopIteration`异常。
@@ -88,7 +97,7 @@
 
   - Classes
 
-    类是可调用的，会返回该类的一个实例(Instance)
+    类对象是可调用的，调用类对象会返回该类的一个实例(Instance)。
 
   - Class Instance
 
@@ -98,27 +107,52 @@
 
 + Custom Class
 
+  使用`class`语句定义类对象，类对象有一些特殊的属性：
+
+| 属性 | 说明 |
+|-------------------|------|
+| `__name__`        | 类名 |
+| `__module__`      | 模块名 |
+| `__dict__`        | 名字空间 |
+| `__bases__`       | 基类元组 |
+| `__doc__`         | Document string |
+| `__annotations__` | |
+
+    每个类对象都有一个字典对象作为其名字空间(namespace)，即`__dict__`。访问类对象的属性，都被转换为对该字典成员的访问，例如`C.x`转换为`C.__dict__["x"]`。
+
 + Class Instance
+
+   类的实例有一些特殊属性：
+
+| 属性 | 说明 |
+|-------------|------|
+| `__dict__`  | 存放属性的字典 |
+| `__class__` | 该实例的类对象 |
+
+每个实例都有一个字典作为其名字空间(namespace)，即`__dict__`属性。
 
 + I/O object
 
 + Internal Type
 
-  
 ## 3.3 特殊函数
 
-  Python程序中，特定的语法所代表的操作，对应于特定的函数。通过定制这些特殊函数，可以实现操作的自定义，这称为`operator overloading`。例如`x[i]`对应的操作为`type(x).__getitem__(x, i)`，因此定制类的`__getitem__`函数，就可以实现自定义的`x[i]`。
+  Python程序中，特定的语法所代表的操作，由特殊命名的函数来实现。通过定制这些特殊函数，可以实现操作的自定义，这称为`operator overloading`。例如`x[i]`对应的操作为`type(x).__getitem__(x, i)`，因此定制类的`__getitem__`函数，就可以实现自定义的`x[i]`。
  
 ### 3.3.1 定制基本的类方法
 
-  关键是要搞清楚该类方法对应的场景！
-
 + `object.__new__(cls[,...])`
+
 + `object.__init__(self[,...])`
+
 + `object.__del__(self)`
+
 + `object.__repr__(self)`
+
 + `object.__str__(self)`
+
 + `object.__bytes__(self)`
+
 + `object.__format__(self, format_spec)`
 
 + `object.__lt__(self, other)`
