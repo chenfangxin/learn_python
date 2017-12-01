@@ -25,7 +25,7 @@
 
 + NotImplemented
 
-  此类型对象只有一个值，通过内建关键字`NotImplemented`访问，其布尔值为`True`。
+  此类型对象只有一个值，通过内建关键字`NotImplemented`访问，其布尔值为`True`。如果类有不支持的操作，那么就可以重载这些操作对应的函数，并返回`NotImplemented`。
 
 + Ellipsis
 
@@ -37,23 +37,38 @@
 
 + Sequences
 
-  通过整数下标或切片(slice)访问Sequences对象中的元素。Sequences分为`immutable`和`mutable`。`immutable`的有`string`，`tuple`，`bytes`；`mutable`的有`list`，`byte array`。
+  Sequences就是序列结构，通过整数下标或切片(slice)访问Sequences对象中的元素。Sequences分为`immutable`和`mutable`。`immutable`的有`string`，`tuple`，`bytes`；`mutable`的有`list`，`byte array`。
 
 + Set
 
-  分为`set`和`frozenset`两种
+  Set就是集合，分为`mutable`和`immutable`，分别通过函数`set()`和`frozenset()`创建。
 
 + Mapping
+    
+  Mapping就是字典
 
 + Callable
   此类型的对象可以被调用，`callable`类型的对象，有如下几种： `User-defined function`，`Instance method`，`Generator function`，`Coroutine function`，`Asynchronous generator function`，`Built-in function`，`Built-in method`，`Classes`，`Class instance`。
 
   - User-defined function
 
-    使用`def`语句定义函数
+    使用`def`语句定义函数。函数对象有一些自带的属性，如下：
+| 属性名称         | 类型 | 说明 |
+|------------------|------|------|
+| __doc__          | string 或 None | 函数的Document string |
+| __name__         | string | 函数名 |
+| __qualname__     | string | 函数的路径 |
+| __module__       | string | 函数所属的模块名 |
+| __defaults__     | tuple 或 None | 存放参数的缺省值 |
+| __code__         |  |  |
+| __globals__      | dict | 函数中能访问的全局变量 |
+| __dict__         | dict |  |
+| __closure__      | tuple 或 None | 存放 |
+| __annotations__  | dict |  |
+| __kwdefaults__   | dict | 存放命名参数的缺省值 |
 
   - Instance method
-
+    
   - Generator function
 
     当一个函数体类使用了`yield`语句，就将此函数称为`Generator function`。此类函数被调用时，总是返回一个迭代器(Iterator Object)；调用该迭代器的`__next__()`方法，会让函数继续执行；当此类函数执行`return`或结束时，会丢出`StopIteration`异常。
