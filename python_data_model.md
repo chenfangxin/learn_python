@@ -19,40 +19,25 @@
 
 下面介绍Python中内建(builtin)的类型：
 
-+ None
+| 类型  | 说明 |
+|----------------|------|
+| None           | 此类型对象只有一个值，通过内建关键字`None`访问，其布尔值为`False` |
+| NotImplemented | 此类型对象只有一个值，通过内建关键字`NotImplemented`访问，其布尔值为`True`。如果类有不支持的操作，那么就可以重载这些操作对应的函数，并返回`NotImplemented` |
+| Ellipsis       | 此类型对象只有一个值，通过字面量`...`或内建关键字`Ellipis`访问，其布尔值为`True` |
+| number.Number  | 此类型的对象通过数字字面量来创建，或者作为算术运算的返回值。Python区分整数(integer)，浮点数(float)和复数(complex) |
+| Sequences      | Sequences就是序列结构，通过整数下标或切片(slice)访问Sequences对象中的元素。Sequences分为`immutable`和`mutable`。`immutable`的有`string`，`tuple`，`bytes`；`mutable`的有`list`，`byte array` |
+| Set            | Set就是集合，分为`mutable`和`immutable`，分别通过函数`set()`和`frozenset()`创建 |
+| Mapping        | Mapping就是字典 |
+| Callable       | 此类型的对象可以被调用，`callable`类型的对象，有如下几种： `User-defined function`，`Instance method`，`Generator function`，`Coroutine function`，`Asynchronous generator function`，`Built-in function`，`Built-in method`，`Classes`，`Class instance` |
+| Module         |   |
+| Custom Class   | 使用`class`语句定义类对象 |
+| Class Instance |   |
+| I/O object     |   |
+| Internal Type  |   |
 
-  此类型对象只有一个值，通过内建关键字`None`访问，其布尔值为`False`。
++ User-defined function
 
-+ NotImplemented
-
-  此类型对象只有一个值，通过内建关键字`NotImplemented`访问，其布尔值为`True`。如果类有不支持的操作，那么就可以重载这些操作对应的函数，并返回`NotImplemented`。
-
-+ Ellipsis
-
-  此类型对象只有一个值，通过字面量`...`或内建关键字`Ellipis`访问，其布尔值为`True`。
-
-+ number.Number
-
-  此类型的对象通过数字字面量来创建，或者作为算术运算的返回值。Python区分整数(integer)，浮点数(float)和复数(complex)
-
-+ Sequences
-
-  Sequences就是序列结构，通过整数下标或切片(slice)访问Sequences对象中的元素。Sequences分为`immutable`和`mutable`。`immutable`的有`string`，`tuple`，`bytes`；`mutable`的有`list`，`byte array`。
-
-+ Set
-
-  Set就是集合，分为`mutable`和`immutable`，分别通过函数`set()`和`frozenset()`创建。
-
-+ Mapping
-    
-  Mapping就是字典
-
-+ Callable
-  此类型的对象可以被调用，`callable`类型的对象，有如下几种： `User-defined function`，`Instance method`，`Generator function`，`Coroutine function`，`Asynchronous generator function`，`Built-in function`，`Built-in method`，`Classes`，`Class instance`。
-
-  - User-defined function
-
-    使用`def`语句定义函数。函数对象有一些自带的属性，如下：
+  使用`def`语句定义函数。函数对象有一些自带的属性，如下：
 
 | 属性名称         | 类型 | 说明 |
 |------------------|------|------|
@@ -68,8 +53,9 @@
 | `__annotations__`  | dict |  |
 | `__kwdefaults__`   | dict | 存放命名参数的缺省值 |
 
-  - Instance method
-   实例的方法也是可调用对象，其具有一些特殊的属性：
++ Instance method
+
+  实例的方法也是可调用对象，其具有一些特殊的属性：
 
 | 属性  | 说明  |
 |-------|-------|
@@ -79,35 +65,25 @@
 | `__name__`   | 该方法的函数名(即`__func__.__name__`) |
 | `__module__` | 模块名 |
  
-  - Generator function
++ Generator function
 
-    当一个函数体类使用了`yield`语句，就将此函数称为`Generator function`。此类函数被调用时，总是返回一个迭代器(Iterator Object)；调用该迭代器的`__next__()`方法，会让函数继续执行；当此类函数执行`return`或结束时，会丢出`StopIteration`异常。
+  当一个函数体类使用了`yield`语句，就将此函数称为`Generator function`。此类函数被调用时，总是返回一个迭代器(Iterator Object)；调用该迭代器的`__next__()`方法，会让函数继续执行；当此类函数执行`return`或结束时，会丢出`StopIteration`异常。
 
-  - Coroutine function
++ Coroutine function
 
-    使用`async def`语句定义的函数，称为`coroutine function`。此类函数被调用时，会返回一个`coroutine object`。
+  使用`async def`语句定义的函数，称为`coroutine function`。此类函数被调用时，会返回一个`coroutine object`。
 
-  - Asynchronous generator function
++ Asynchronous generator function
 
-    使用`async def`语句定义，并且函数体内使用了`yield`语句的函数，称为`asynchronous generator function`。此类函数被调用时，会返回一个异步迭代器(`asynchronous iterator object`)
+  使用`async def`语句定义，并且函数体内使用了`yield`语句的函数，称为`asynchronous generator function`。此类函数被调用时，会返回一个异步迭代器(`asynchronous iterator object`)
 
-  - Built-in function
++ Built-in function
 
-  - Built-in method
++ Built-in method
 
-  - Classes
++ Classes
 
-    类对象是可调用的，调用类对象会返回该类的一个实例(Instance)。
-
-  - Class Instance
-
-    定义了`__call__`方法的实例，可以当作函数调用。
-
-+ Module
-
-+ Custom Class
-
-  使用`class`语句定义类对象，类对象有一些特殊的属性：
+  类对象是可调用的，调用类对象会返回该类的一个实例(Instance)。对象有一些特殊的属性：
 
 | 属性 | 说明 |
 |-------------------|------|
@@ -118,23 +94,18 @@
 | `__doc__`         | Document string |
 | `__annotations__` | |
 
-
   每个类对象都有一个字典对象作为其名字空间(namespace)，即`__dict__`。访问类对象的属性，都被转换为对该字典成员的访问，例如`C.x`转换为`C.__dict__["x"]`。
 
 + Class Instance
 
-   类的实例有一些特殊属性：
+  定义了`__call__`方法的实例，可以当作函数调用。 类的实例有一些特殊属性：
 
 | 属性 | 说明 |
 |-------------|------|
-| `__dict__`  | 存放属性的字典 |
+| `__dict__`  | 存放Arbitrary Attribute的字典 |
 | `__class__` | 该实例的类对象 |
 
-每个实例都有一个字典作为其名字空间(namespace)，即`__dict__`属性。
-
-+ I/O object
-
-+ Internal Type
+  每个实例都有一个字典作为其名字空间(namespace)，即`__dict__`属性。
 
 ## 3.3 特殊函数
 
