@@ -19,21 +19,21 @@
 
 下面介绍Python中内建(builtin)的类型：
 
-| 类型  | 说明 |
+| 值类型  | 说明 |
 |----------------|------|
 | None           | 此类型对象只有一个值，通过内建关键字`None`访问，其布尔值为`False` |
-| NotImplemented | 此类型对象只有一个值，通过内建关键字`NotImplemented`访问，其布尔值为`True`。如果类有不支持的操作，那么就可以重载这些操作对应的函数，并返回`NotImplemented` |
+| NotImplemented | 此类型对象只有一个值，通过内建关键字`NotImplemented`访问，其布尔值为`True`。<br/>如果类有不支持的操作，那么就可以重载这些操作对应的函数，并返回`NotImplemented` |
 | Ellipsis       | 此类型对象只有一个值，通过字面量`...`或内建关键字`Ellipis`访问，其布尔值为`True` |
-| number.Number  | 此类型的对象通过数字字面量来创建，或者作为算术运算的返回值。Python区分整数(integer)，浮点数(float)和复数(complex) |
-| Sequences      | Sequences就是序列结构，通过整数下标或切片(slice)访问Sequences对象中的元素。Sequences分为`immutable`和`mutable`。`immutable`的有`string`，`tuple`，`bytes`；`mutable`的有`list`，`byte array` |
-| Set            | Set就是集合，分为`mutable`和`immutable`，分别通过函数`set()`和`frozenset()`创建 |
+| number.Number  | 此类型的对象通过数字字面量来创建，或者作为算术运算的返回值。<br/>Python区分整数(integer)，浮点数(float)和复数(complex) |
+| Sequences      | Sequences就是序列结构，通过整数下标或切片(slice)访问Sequences对象中的元素。<br/>Sequences分为`immutable`和`mutable`。`immutable`的有`string`，`tuple`，`bytes`；`mutable`的有`list`，`byte array` |
+| Set            | Set就是集合，可分为`mutable`和`immutable`，分别通过函数`set()`和`frozenset()`创建 |
 | Mapping        | Mapping就是字典 |
-| Callable       | 此类型的对象可以被调用，`callable`类型的对象，有如下几种： `User-defined function`，`Instance method`，`Generator function`，`Coroutine function`，`Asynchronous generator function`，`Built-in function`，`Built-in method`，`Classes`，`Class instance` |
-| Module         |   |
+| Callable       | 此类型的对象可以被调用，`callable`类型的对象，有如下几种：<br/>  `User-defined function`，<br/>  `Instance method`，<br/>  `Generator function`，<br/>  `Coroutine function`，<br/>  `Asynchronous generator function`，<br/>  `Built-in function`，<br/>  `Built-in method`，<br/>  `Classes`，<br/>  `Class instance` |
+| Module         | 每个Python源文件就是一个`Module`，通过`import`语句引入模块  |
 | Custom Class   | 使用`class`语句定义类对象 |
 | Class Instance |   |
-| I/O object     |   |
-| Internal Type  |   |
+| I/O Object     | 就是`file object`，通过`open()`，`os.popen()`，`os.fdopen()`，`makefile()`等函数创建  |
+| Internal Type  | 是Python解释器使用，并暴露给用户的值，比如：<br/>  `Code Object`，`Frame Object`，`Traceback Object`，`Slice Object`，`Static Method Object`，`Class Method Object`  |
 
 + User-defined function
 
