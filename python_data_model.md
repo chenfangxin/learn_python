@@ -35,9 +35,11 @@
 | I/O Object     | 就是`file object`，通过`open()`，`os.popen()`，`os.fdopen()`，`makefile()`等函数创建  |
 | Internal Type  | 是Python解释器使用，并暴露给用户的值，比如：<br/>  `Code Object`，`Frame Object`，`Traceback Object`，`Slice Object`，`Static Method Object`，`Class Method Object`  |
 
+`Callable`类型是非常重要的值类型，
+
 + User-defined function
 
-  使用`def`语句定义函数。函数对象有一些自带的属性，如下：
+使用`def`语句定义函数。函数对象有一些自带的属性，如下：
 
 | 属性名称         | 类型 | 说明 |
 |------------------|------|------|
@@ -55,7 +57,7 @@
 
 + Instance method
 
-  实例的方法也是可调用对象，其具有一些特殊的属性：
+实例的方法也是可调用对象，其具有一些特殊的属性：
 
 | 属性  | 说明  |
 |-------|-------|
@@ -67,19 +69,22 @@
  
 + Generator function
 
-  当一个函数体类使用了`yield`语句，就将此函数称为`Generator function`。此类函数被调用时，总是返回一个迭代器(Iterator Object)；调用该迭代器的`__next__()`方法，会让函数继续执行；当此类函数执行`return`或结束时，会丢出`StopIteration`异常。
+当一个函数体类使用了`yield`语句，就将此函数称为`Generator function`。此类函数被调用时，总是返回一个迭代器(Iterator Object)；调用该迭代器的`__next__()`方法，会让函数继续执行；当此类函数执行`return`或结束时，会丢出`StopIteration`异常。
 
 + Coroutine function
 
-  使用`async def`语句定义的函数，称为`coroutine function`。此类函数被调用时，会返回一个`coroutine object`。
+使用`async def`语句定义的函数，称为`coroutine function`。此类函数被调用时，会返回一个`coroutine object`。
 
 + Asynchronous generator function
 
-  使用`async def`语句定义，并且函数体内使用了`yield`语句的函数，称为`asynchronous generator function`。此类函数被调用时，会返回一个异步迭代器(`asynchronous iterator object`)
+使用`async def`语句定义，并且函数体内使用了`yield`语句的函数，称为`asynchronous generator function`。此类函数被调用时，会返回一个异步迭代器(`asynchronous iterator object`)
 
 + Built-in function
 
+内置函数实际上是`C`语言实现的，具有很高的执行效率。
+
 + Built-in method
+
 
 + Classes
 
