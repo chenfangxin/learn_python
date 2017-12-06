@@ -28,7 +28,7 @@
 | Sequences      | Sequences就是序列结构，通过整数下标或切片(slice)访问Sequences对象中的元素。<br/>Sequences分为`immutable`和`mutable`。`immutable`的有`string`，`tuple`，`bytes`；`mutable`的有`list`，`byte array` |
 | Set            | Set就是集合，可分为`mutable`和`immutable`，分别通过函数`set()`和`frozenset()`创建 |
 | Mapping        | Mapping就是字典 |
-| Callable       | 此类型的对象可以被调用，`callable`类型的对象，有如下几种：<br/>  `User-defined function`，<br/>  `Instance method`，<br/>  `Generator function`，<br/>  `Coroutine function`，<br/>  `Asynchronous generator function`，<br/>  `Built-in function`，<br/>  `Built-in method`，<br/>  `Classes`，<br/>  `Class instance` |
+| Callable       | 此类型的对象可以被调用，`callable`类型的对象，有如下几种：<br/>  `User-defined function`，`Instance method`，`Generator function`，`Coroutine function`，`Asynchronous generator function`，`Built-in function`，`Built-in method`，`Classes`，`Class instance` |
 | Module         | 每个Python源文件就是一个`Module`，通过`import`语句引入模块  |
 | Custom Class   | 使用`class`语句定义类对象 |
 | Class Instance |   |
