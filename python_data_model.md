@@ -28,14 +28,14 @@
 | Sequences      | Sequences就是序列结构，通过整数下标或切片(slice)访问Sequences对象中的元素。<br/>Sequences分为`immutable`和`mutable`。`immutable`的有`string`，`tuple`，`bytes`；`mutable`的有`list`，`byte array` |
 | Set            | Set就是集合，可分为`mutable`和`immutable`，分别通过函数`set()`和`frozenset()`创建 |
 | Mapping        | Mapping就是字典 |
-| Callable       | 此类型的对象可以被调用，`callable`类型的对象，有如下几种：<br/>  `User-defined function`，`Instance method`，`Generator function`，`Coroutine function`，`Asynchronous generator function`，`Built-in function`，`Built-in method`，`Classes`，`Class instance` |
+| Callable       | 此类型的对象可以被调用，`callable`类型的对象，有如下几种：<br/>`User-defined function`，`Instance method`，`Generator function`，`Coroutine function`，`Asynchronous generator function`，`Built-in function`，`Built-in method`，`Classes`，`Class instance` |
 | Module         | 每个Python源文件就是一个`Module`，通过`import`语句引入模块  |
 | Custom Class   | 使用`class`语句定义类对象 |
-| Class Instance |   |
+| Class Instance | 类的实例  |
 | I/O Object     | 就是`file object`，通过`open()`，`os.popen()`，`os.fdopen()`，`makefile()`等函数创建  |
-| Internal Type  | 是Python解释器使用，并暴露给用户的值，比如：<br/>  `Code Object`，`Frame Object`，`Traceback Object`，`Slice Object`，`Static Method Object`，`Class Method Object`  |
+| Internal Type  | 就是Python解释器使用，并暴露给用户的值，比如：<br/>`Code Object`，`Frame Object`，`Traceback Object`，`Slice Object`，`Static Method Object`，`Class Method Object`  |
 
-`Callable`类型是非常重要的值类型，
+`Callable`类型是非常重要的值类型，可分为如下种类：
 
 + User-defined function
 
@@ -81,10 +81,11 @@
 
 + Built-in function
 
-内置函数实际上是`C`语言实现的，具有很高的执行效率。
+内置(Built-in)函数实际上是`C`语言实现的，具有很高的执行效率。
 
 + Built-in method
 
+对象的内置方法，也是`C`语言实现的
 
 + Classes
 
