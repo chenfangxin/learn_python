@@ -169,6 +169,7 @@ len(D)
 D.keys()	# 返回字典的Key列表
 D.values()	# 返回字典的Value列表
 D.items()	# 返回字典的(Key:Value)列表
+key in D 	# 判断字典中是否存在指定的key
 ```
 
 + 合并与删除
