@@ -72,13 +72,14 @@ if <test1> :
 	<statements1>
 elif <test2> :
 	<statements2>
-else
+else :
 	<statements3>
 ```
 
 上述语句中，`elif`和`else`是可选的。
 
 Python中，用如下规则进行真值测试：
+
 + 任何非零数字或非空对象都为真；数字零，False，空字符串，空对象(比如空tuple, 空list，空set等)以及特殊对象None被认为假
 + 用户定义的类，如果定义的`__bool__`或`__len__`返回0或False，被视为假
 + 比较(`>`,`<`,`>=`,`<=`)或等于(`==`)测试会返回True或False
